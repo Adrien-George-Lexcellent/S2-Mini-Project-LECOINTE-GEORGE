@@ -6,10 +6,20 @@ public class LabyrinthGame
 {
 
 	/**
-	 * Start the current Labyrinth game 
+	 * Create a new labyrinth game, in a playable state
 	 */
-	public void startLabyrinthGame()
+	public LabyrinthGame()
 	{
+		
+	}
+	
+	/**
+	 * Launch the labyrinth 
+	 */
+	public void start()
+	{
+		System.out.println("The game just started");
+		/* Actions realized during the game */
 		System.out.println("The game just started");
 	}
 	
