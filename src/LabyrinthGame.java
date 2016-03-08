@@ -1,10 +1,13 @@
+// TODO update comment (find a link to a description of the game, in english
 /**
- * @author georgela
  * A Labyrinth game
+ * @author georgela
+ * 
  */
 public class LabyrinthGame
 {
 
+	// TODO update comment (what is a playable state?)
 	/**
 	 * Create a new labyrinth game, in a playable state
 	 */
@@ -13,6 +16,7 @@ public class LabyrinthGame
 		
 	}
 	
+	// TODO rename method, fix comment (ask for advice)
 	/**
 	 * Launch the labyrinth 
 	 */
