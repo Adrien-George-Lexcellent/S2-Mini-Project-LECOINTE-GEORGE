@@ -1,26 +1,27 @@
-// TODO update comment (find a link to a description of the game, in english
+// TODO (done) update comment (find a link to a description of the game, in english )
 /**
  * A Labyrinth game
+ * Labyrinth game rules : https://www.ravensburger.com/uk/games/family-games/labyrinth/index.html
  * @author georgela
  * 
  */
 public class LabyrinthGame
 {
 
-	// TODO update comment (what is a playable state?)
+	// TODO  (done) update comment (what is a playable state?)
 	/**
-	 * Create a new labyrinth game, in a playable state
+	 * create a new labyrinth game, initialize the game board and make the game ready to be played
 	 */
 	public LabyrinthGame()
 	{
 		
 	}
 	
-	// TODO rename method, fix comment (ask for advice)
+	// TODO (done) rename method, fix comment (ask for advice)
 	/**
 	 * Launch the labyrinth 
 	 */
-	public void start()
+	public void play()
 	{
 		System.out.println("The game just started");
 		/* Actions realized during the game */
