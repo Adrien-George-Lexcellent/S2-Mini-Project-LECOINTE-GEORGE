@@ -14,7 +14,8 @@ public class LabyrinthGame
 	 */
 	public LabyrinthGame()
 	{
-		
+		LabyrinthBoard currentBoard = new LabyrinthBoard();
+		LabyrinthDeck currentDeck = new LabyrinthDeck();
 	}
 	
 	// TODO (done) rename method, fix comment (ask for advice)
