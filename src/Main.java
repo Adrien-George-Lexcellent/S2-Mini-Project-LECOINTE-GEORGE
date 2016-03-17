@@ -1,14 +1,12 @@
-// TODO (done) update README.md (what)
-
-// TODO (done) write comment
 /**
+ *  The application's core class
  * @author georgela
- * The application's core class
+ *
  */
 public class Main
 {
 
-	// TODO (done) write comment
+	// TODO generate Javadoc to see what gone wrong
 	/**
 	 * @param args
 	 * Main method of the application

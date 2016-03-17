@@ -1,4 +1,3 @@
-// TODO (done) update comment (find a link to a description of the game, in english )
 /**
  * A Labyrinth game
  * Labyrinth game rules : https://www.ravensburger.com/uk/games/family-games/labyrinth/index.html
@@ -8,17 +7,19 @@
 public class LabyrinthGame
 {
 
-	// TODO  (done) update comment (what is a playable state?)
+	// TODO  update comment (what is an "initialized" board?)
 	/**
 	 * create a new labyrinth game, initialize the game board and make the game ready to be played
 	 */
 	public LabyrinthGame()
 	{
 		LabyrinthBoard currentBoard = new LabyrinthBoard();
+		
+		// TODO what is the purpose of this field, it does not appear in constructor's specs?
 		LabyrinthDeck currentDeck = new LabyrinthDeck();
 	}
 	
-	// TODO (done) rename method, fix comment (ask for advice)
+	// TODO detail comment (what is the main algorithm?)
 	/**
 	 * Launch the labyrinth 
 	 */
@@ -26,6 +27,7 @@ public class LabyrinthGame
 	{
 		System.out.println("The game just started");
 		/* Actions realized during the game */
+		// TODO fix debug message
 		System.out.println("The game just started");
 	}
 	
