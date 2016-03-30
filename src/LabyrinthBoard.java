@@ -1,6 +1,6 @@
-// TODO (done) fix comment (generate javadoc to see what's wrong)
 /**
  * The board on which the labyrinth game is played
+ * 
  * @author georgela
  */
 public class LabyrinthBoard
@@ -10,10 +10,9 @@ public class LabyrinthBoard
 	 */
 	public LabyrinthBoard()
 	{
+		// TODO think about it: currentBoard is declared as a local variable, it
+		// can not be used
+		// outside the constructor.
 		Tile[][] currentBoard = new Tile[7][7];
-		
-		
-		
-		
 	}
 }

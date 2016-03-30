@@ -6,20 +6,17 @@
  */
 public class LabyrinthGame
 {
-
-	// TODO (done) update comment (what is an "initialized" board?)
 	/**
 	 * prepare a new labyrinth game, create a new game board and a new shuffled deck of treasure cards
 	 */
 	public LabyrinthGame()
 	{
+		// TODO think about it: why creating new object that are unusable after?
 		new LabyrinthBoard();
-		
-		// TODO (done) what is the purpose of this field, it does not appear in constructor's specs?
+	
 		new LabyrinthDeck();
 	}
 	
-	// TODO (done) detail comment (what is the main algorithm?)
 	/**
 	 * Until the game isn't finished{
 	 *   DO
@@ -44,7 +41,6 @@ public class LabyrinthGame
 	{
 		System.out.println("The game just started");
 		/* Actions realized during the game */
-		// TODO fix debug message
 		System.out.println("The game just ended");
 	}
 	
