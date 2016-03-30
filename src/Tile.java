@@ -1,6 +1,6 @@
-// TODO clean comment
+// TODO (done) clean comment
 /**
- * The tiles that are composing the Labyrinth board
+ * The tiles composing the Labyrinth board
  * @author georgela
  */
 public class Tile
@@ -10,37 +10,61 @@ public class Tile
 	 */
 	private static final boolean DEFAULT_MOVEABLE = true;
 
-	// TODO detail comment (not very understandable)
+	// TODO (done) detail comment (not very understandable)
 	/**
-	 * The spawn attribute of a moveable tile (never a spawn)
+	 * No moveable tile is a player spawn
 	 */
 	private static final int DEFAULT_SPAWN = 0;
 	
-	// TODO write comment
-	private int orientation;
+	/**
+	 * A value between 0 and 10, representing the category and rotation of the tile
+	 */
+	// TODO (done) write comment
+	private int wall;
 
-	// TODO write comment
+	/**
+	 * A value between 0 and 24 representing the treasure present on the tile (0 : no treasures on the tile, 1-24 : the index of the treasure)
+	 */
+	// TODO (done) write comment
 	private int treasure;
 	
-	// TODO write comment
+	/**
+	 * Represent tha ability of a tile to glide on the board (o = fix, 1 = mobile)
+	 */
+	// TODO (done) write comment
 	private boolean moveable;
 	
-	// TODO write comment
+	/**
+	 * Represent if whether or not a player start the game on this tile (0 : no, 1-4 : player number)
+	 */
+	// TODO (done) write comment
 	private int spawn;
 	
-	// TODO write comment
-	Tile(int orientation, int treasure)
+	/**
+	 * The default builder, creating mobile, non-spawn tiles, carrying a treasure or not, based on the category of tiles. 
+	 * @param wall
+	 * @param treasure
+	 */
+	// TODO (done) write comment
+	Tile(int wall, int treasure)
 	{
-		this.orientation = orientation;
+		this.wall = wall;
 		this.treasure = treasure;
 		this.moveable = DEFAULT_MOVEABLE;
 		this.spawn = DEFAULT_SPAWN;
 	}
 	
-	// TODO write comment
-	Tile(int orientation, int treasure, boolean moveable, int spawn)
+	/**
+	 * The full builder, creating a tile with all it's attributes specified in the parameters
+	 * @param wall
+	 * @param treasure
+	 * @param moveable
+	 * @param spawn
+	 */
+	// TODO (done) write comment
+	Tile(int wall, int treasure, boolean moveable, int spawn)
 	{
-		this.orientation = orientation;
+		this.wall = wall;
 		this.treasure = treasure;
 		this.moveable = moveable;
 		this.spawn = spawn;

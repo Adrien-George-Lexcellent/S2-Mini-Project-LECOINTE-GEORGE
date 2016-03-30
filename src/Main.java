@@ -6,11 +6,11 @@
 public class Main
 {
 
-	// TODO generate Javadoc to see what gone wrong
+	// TODO (done) generate Javadoc to see what gone wrong
 	/**
-	 * @param args
 	 * Main method of the application
 	 * Call for the labyrinthGame constructor
+	 * @param args
 	 */
 	public static void main(String[] args)
 	{

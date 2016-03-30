@@ -7,18 +7,28 @@
 public class LabyrinthGame
 {
 	/**
+	 * the game board of the current game
+	 */
+	private final LabyrinthBoard currentBoard;
+	
+	/**
+	 * the game deck of a current game
+	 */
+	private final LabyrinthDeck currentDeck;
+	
+	/**
 	 * prepare a new labyrinth game, create a new game board and a new shuffled deck of treasure cards
 	 */
 	public LabyrinthGame()
 	{
-		// TODO think about it: why creating new object that are unusable after?
-		new LabyrinthBoard();
-	
-		new LabyrinthDeck();
+		// TODO (done) think about it: why creating new object that are unusable after?
+
+		currentBoard = new LabyrinthBoard();
+		currentDeck = new LabyrinthDeck();
 	}
 	
 	/**
-	 * Until the game isn't finished{
+	 * Until the game is finished{
 	 *   DO
 	 *   for each player{
 	 *     the current player receive the remaining labyrinth piece
