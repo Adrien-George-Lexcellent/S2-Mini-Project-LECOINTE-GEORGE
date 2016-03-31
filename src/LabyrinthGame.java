@@ -15,6 +15,10 @@ public class LabyrinthGame
 	 * the game deck of a current game
 	 */
 	private final LabyrinthDeck currentDeck;
+
+
+	
+	
 	
 	/**
 	 * prepare a new labyrinth game, create a new game board and a new shuffled deck of treasure cards
@@ -25,6 +29,7 @@ public class LabyrinthGame
 
 		currentBoard = new LabyrinthBoard();
 		currentDeck = new LabyrinthDeck();
+
 	}
 	
 	/**
