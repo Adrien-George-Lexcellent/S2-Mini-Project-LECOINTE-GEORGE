@@ -41,7 +41,7 @@ public class Tile
 	private int spawn;
 	
 	/**
-	 * The default builder, creating mobile, non-spawn tiles, carrying a treasure or not, based on the category of tiles. 
+	 * The lite builder, creating mobile, non-spawn tiles, carrying a treasure or not, based on the category of tiles, used for all the mobile tiles. 
 	 * @param wall
 	 * @param treasure
 	 */
@@ -55,7 +55,22 @@ public class Tile
 	}
 	
 	/**
-	 * The full builder, creating a tile with all it's attributes specified in the parameters
+	 * The non-spawn location builder, creating a tile without player starting location and with all it's other attributes specified in the parameters, used for almost all the fixed tiles (at the only exception of spawn tiles)
+	 * @param wall
+	 * @param treasure
+	 * @param moveable
+	 */
+	// TODO (done) write comment
+	Tile(int wall, int treasure, boolean moveable)
+	{
+		this.wall = wall;
+		this.treasure = treasure;
+		this.moveable = moveable;
+		this.spawn = DEFAULT_SPAWN;
+	}
+
+	/**
+	 * The full builder, creating a tile with all it's attributes specified in the parameters, only for spawn locations
 	 * @param wall
 	 * @param treasure
 	 * @param moveable

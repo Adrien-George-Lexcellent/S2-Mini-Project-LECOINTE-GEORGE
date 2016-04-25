@@ -8,6 +8,9 @@ import java.util.Random;
 public class LabyrinthBoard
 {
 	
+	public static final int GRID_SIZE = 7;
+
+	
 	/**
 	 * The name of the current game's tiles table
 	 */
@@ -24,7 +27,7 @@ public class LabyrinthBoard
 		// can not be used
 		// outside the constructor.
 		
-		this.currentTiles = new Tile[7][7];
+		this.currentTiles = new Tile[GRID_SIZE][GRID_SIZE];
 		this.currentSetOfTiles = new SetOfTiles();
 		
 		this.initFixedTiles();
@@ -34,6 +37,9 @@ public class LabyrinthBoard
 		
 	}
 
+	/**
+	 * Initialize all fixed tiles at their respective positions with all their respective characteristics
+	 */
 	public void initFixedTiles()
 	{
 		int k=12;
@@ -43,20 +49,28 @@ public class LabyrinthBoard
 		this.currentTiles[6][0] = new Tile(3, 0, false, 3);
 		this.currentTiles[6][6] = new Tile(6, 0, false, 4);
 		
-		this.currentTiles[0][2] = new Tile(8, k++, false, 0);
-		this.currentTiles[0][4] = new Tile(8, k++, false, 0);
-		this.currentTiles[6][2] = new Tile(10, k++, false, 0);
-		this.currentTiles[6][4] = new Tile(10, k++, false, 0);
-		this.currentTiles[2][0] = new Tile(7, k++, false, 0);
-		this.currentTiles[4][0] = new Tile(7, k++, false, 0);
-		this.currentTiles[2][6] = new Tile(9, k++, false, 0);
-		this.currentTiles[4][6] = new Tile(9, k++, false, 0);
-		this.currentTiles[2][2] = new Tile(8, k++, false, 0);
-		this.currentTiles[2][4] = new Tile(9, k++, false, 0);
-		this.currentTiles[4][2] = new Tile(7, k++, false, 0);
-		this.currentTiles[4][4] = new Tile(10, k++, false, 0);
+		this.currentTiles[0][2] = new Tile(8, k++, false);
+		this.currentTiles[0][4] = new Tile(8, k++, false);
+		this.currentTiles[6][2] = new Tile(10, k++, false);
+		this.currentTiles[6][4] = new Tile(10, k++, false);
+		this.currentTiles[2][0] = new Tile(7, k++, false);
+		this.currentTiles[4][0] = new Tile(7, k++, false);
+		this.currentTiles[2][6] = new Tile(9, k++, false);
+		this.currentTiles[4][6] = new Tile(9, k++, false);
+		this.currentTiles[2][2] = new Tile(8, k++, false);
+		this.currentTiles[2][4] = new Tile(9, k++, false);
+		this.currentTiles[4][2] = new Tile(7, k++, false);
+		this.currentTiles[4][4] = new Tile(10, k++, false);
 	}
 	
+	/**
+	 * For each row of the table :
+	 *    if row number is even
+	 *       only tiles on odd numbers lines are to be filled
+	 *       fill them with a random tile form the set of mobile tiles
+	 *    else
+	 *       fill the whole row with tiles from the set of mobile tiles   
+	 */
 	private void initMobileTiles()
 	{
 		Random random = new Random();

@@ -47,7 +47,7 @@ public class LabyrinthGame
 	 *       if the treasure card deck is empty : return
 	 *       else : a card from the deck is drawn and added to 
 	 *       }
-	 *     the current player's turn ends and the turn of the next player	start 	 
+	 *     the current player's turn ends and the turn of the next player start 	 
 	 *     }
 	 *   }
 	 * display highest score player with his score
