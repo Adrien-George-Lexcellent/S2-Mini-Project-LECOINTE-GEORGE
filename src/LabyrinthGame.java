@@ -27,8 +27,8 @@ public class LabyrinthGame
 	{
 		// TODO (done) think about it: why creating new object that are unusable after?
 
-		currentBoard = new LabyrinthBoard();
-		currentDeck = new LabyrinthDeck();
+		this.currentBoard = new LabyrinthBoard();
+		this.currentDeck = new LabyrinthDeck();
 
 	}
 	

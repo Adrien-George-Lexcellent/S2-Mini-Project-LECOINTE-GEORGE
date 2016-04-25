@@ -29,7 +29,7 @@ public class Tile
 	private int treasure;
 	
 	/**
-	 * Represent tha ability of a tile to glide on the board (o = fix, 1 = mobile)
+	 * Represent the ability of a tile to glide on the board (o = fix, 1 = mobile)
 	 */
 	// TODO (done) write comment
 	private boolean moveable;
