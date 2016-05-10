@@ -6,7 +6,6 @@
 public class Main
 {
 
-	// TODO (done) generate Javadoc to see what gone wrong
 	/**
 	 * Main method of the application
 	 * Call for the labyrinthGame constructor

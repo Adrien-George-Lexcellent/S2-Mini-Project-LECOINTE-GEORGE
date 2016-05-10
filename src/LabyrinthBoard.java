@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class LabyrinthBoard
 {
-	
+	// TODO add javadoc comment
 	public static final int GRID_SIZE = 7;
 
 	
@@ -16,6 +16,7 @@ public class LabyrinthBoard
 	 */
 	private final Tile[][] currentTiles;
 	
+	// TODO add javadoc comment
 	private final SetOfTiles currentSetOfTiles;
 	
 	/**
@@ -23,9 +24,6 @@ public class LabyrinthBoard
 	 */
 	public LabyrinthBoard()
 	{
-		// TODO (done) think about it: currentBoard is declared as a local variable, it
-		// can not be used
-		// outside the constructor.
 		
 		this.currentTiles = new Tile[GRID_SIZE][GRID_SIZE];
 		this.currentSetOfTiles = new SetOfTiles();
@@ -73,6 +71,7 @@ public class LabyrinthBoard
 	 */
 	private void initMobileTiles()
 	{
+		// TODO declare literals as constants
 		Random random = new Random();
 		int k, i=0;
 		

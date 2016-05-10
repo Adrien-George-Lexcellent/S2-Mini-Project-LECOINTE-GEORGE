@@ -1,4 +1,3 @@
-// TODO (done) clean comment
 /**
  * The tiles composing the Labyrinth board
  * @author georgela
@@ -10,7 +9,6 @@ public class Tile
 	 */
 	private static final boolean DEFAULT_MOVEABLE = true;
 
-	// TODO (done) detail comment (not very understandable)
 	/**
 	 * No moveable tile is a player spawn
 	 */
@@ -19,25 +17,21 @@ public class Tile
 	/**
 	 * A value between 0 and 10, representing the category and rotation of the tile
 	 */
-	// TODO (done) write comment
 	private int wall;
 
 	/**
 	 * A value between 0 and 24 representing the treasure present on the tile (0 : no treasures on the tile, 1-24 : the index of the treasure)
 	 */
-	// TODO (done) write comment
 	private int treasure;
 	
 	/**
 	 * Represent the ability of a tile to glide on the board (o = fix, 1 = mobile)
 	 */
-	// TODO (done) write comment
 	private boolean moveable;
 	
 	/**
 	 * Represent if whether or not a player start the game on this tile (0 : no, 1-4 : player number)
 	 */
-	// TODO (done) write comment
 	private int spawn;
 	
 	/**
@@ -45,7 +39,6 @@ public class Tile
 	 * @param wall
 	 * @param treasure
 	 */
-	// TODO (done) write comment
 	Tile(int wall, int treasure)
 	{
 		this.wall = wall;
@@ -60,7 +53,6 @@ public class Tile
 	 * @param treasure
 	 * @param moveable
 	 */
-	// TODO (done) write comment
 	Tile(int wall, int treasure, boolean moveable)
 	{
 		this.wall = wall;
@@ -76,7 +68,6 @@ public class Tile
 	 * @param moveable
 	 * @param spawn
 	 */
-	// TODO (done) write comment
 	Tile(int wall, int treasure, boolean moveable, int spawn)
 	{
 		this.wall = wall;

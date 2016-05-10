@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-
+// TODO add javadoc comment
 public class SetOfTiles
 {
+	// TODO add javadoc comment
 	private final ArrayList<Tile> ListOfTiles;
 		
+	// TODO add javadoc comment
 	public SetOfTiles(){
 		this.ListOfTiles = new ArrayList<Tile>();
 		
@@ -29,6 +31,7 @@ public class SetOfTiles
 		Random random = new Random(); 
 		int k=0;
 		
+		// TODO declare literals as constants
 		for (int i=0; i<34; i++){
 			if (i < 12){
 				this.ListOfTiles.add(i, new Tile(random.nextInt(1)+1, 0));
@@ -43,11 +46,12 @@ public class SetOfTiles
 		}
 		
 	}
-	
+	// TODO add javadoc comment
 	public int length(){
 		return this.ListOfTiles.size();
 	}
-
+	
+	// TODO add javadoc comment
 	public Tile take(int index) throws IndexOutOfBoundsException{
 		return this.ListOfTiles.remove(index);
 	}

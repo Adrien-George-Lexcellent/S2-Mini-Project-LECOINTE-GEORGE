@@ -4,5 +4,5 @@
  */
 public class LabyrinthDeck
 {
-
+	// TODO is this class useful?
 }
