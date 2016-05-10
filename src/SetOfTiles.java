@@ -27,21 +27,26 @@ public class SetOfTiles
 	private void fillSetOfTiles(){
 		
 		Random random = new Random(); 
-		int k=0;
+		int k=1;
 		
 		for (int i=0; i<34; i++){
 			if (i < 12){
 				this.ListOfTiles.add(i, new Tile(random.nextInt(1)+1, 0));
 			}
 			else if (i >= 28){
-				this.ListOfTiles.add(i, new Tile(random.nextInt(3)+7, k++));
+				this.ListOfTiles.add(i, new Tile(random.nextInt(3)+7, k));
+				k++;
 			}
 			else{
-				if (k<6) this.ListOfTiles.add(i, new Tile(random.nextInt(3)+3, k++));
-				else this.ListOfTiles.add(i, new Tile(random.nextInt(3)+3, 0));
+				if (k<8) {
+					this.ListOfTiles.add(i, new Tile(random.nextInt(3)+3, k));
+					k++;
+				}
+				else {
+					this.ListOfTiles.add(i, new Tile(random.nextInt(3)+3, 0));
+				}
 			}
 		}
-		
 	}
 	
 	public int length(){

@@ -55,6 +55,9 @@ public class LabyrinthGame
 	public void play()
 	{
 		System.out.println("The game just started");
+		this.currentBoard.displayTreasureStatus();
+		
+		this.currentBoard.displayRemainingTile();
 		/* Actions realized during the game */
 		System.out.println("The game just ended");
 	}

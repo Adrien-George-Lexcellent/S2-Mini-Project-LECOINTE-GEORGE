@@ -84,4 +84,31 @@ public class Tile
 		this.moveable = moveable;
 		this.spawn = spawn;
 	}
+		
+	
+	public int getWall()
+	{
+		return wall;
+	}
+
+	public int getTreasure()
+	{
+		return treasure;
+	}
+
+	public boolean isMoveable()
+	{
+		return moveable;
+	}
+
+	public int getSpawn()
+	{
+		return spawn;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Tile [wall=" + wall + ", treasure=" + treasure + ", moveable=" + moveable + ", spawn=" + spawn + "]";
+	}
 }

@@ -8,6 +8,9 @@ import java.util.Random;
 public class LabyrinthBoard
 {
 	
+	/**
+	 * The standard size of a Labyrinth board, in rows and columns
+	 */
 	public static final int GRID_SIZE = 7;
 
 	
@@ -16,6 +19,9 @@ public class LabyrinthBoard
 	 */
 	private final Tile[][] currentTiles;
 	
+	/**
+	 * A set containing all the mobile tiles for a labyrinth board
+	 */
 	private final SetOfTiles currentSetOfTiles;
 	
 	/**
@@ -49,18 +55,18 @@ public class LabyrinthBoard
 		this.currentTiles[6][0] = new Tile(3, 0, false, 3);
 		this.currentTiles[6][6] = new Tile(6, 0, false, 4);
 		
-		this.currentTiles[0][2] = new Tile(8, k++, false);
-		this.currentTiles[0][4] = new Tile(8, k++, false);
-		this.currentTiles[6][2] = new Tile(10, k++, false);
-		this.currentTiles[6][4] = new Tile(10, k++, false);
-		this.currentTiles[2][0] = new Tile(7, k++, false);
-		this.currentTiles[4][0] = new Tile(7, k++, false);
-		this.currentTiles[2][6] = new Tile(9, k++, false);
-		this.currentTiles[4][6] = new Tile(9, k++, false);
-		this.currentTiles[2][2] = new Tile(8, k++, false);
-		this.currentTiles[2][4] = new Tile(9, k++, false);
-		this.currentTiles[4][2] = new Tile(7, k++, false);
-		this.currentTiles[4][4] = new Tile(10, k++, false);
+		this.currentTiles[0][2] = new Tile(8, ++k, false);
+		this.currentTiles[0][4] = new Tile(8, ++k, false);
+		this.currentTiles[6][2] = new Tile(10, ++k, false);
+		this.currentTiles[6][4] = new Tile(10, ++k, false);
+		this.currentTiles[2][0] = new Tile(7, ++k, false);
+		this.currentTiles[4][0] = new Tile(7, ++k, false);
+		this.currentTiles[2][6] = new Tile(9, ++k, false);
+		this.currentTiles[4][6] = new Tile(9, ++k, false);
+		this.currentTiles[2][2] = new Tile(8, ++k, false);
+		this.currentTiles[2][4] = new Tile(9, ++k, false);
+		this.currentTiles[4][2] = new Tile(7, ++k, false);
+		this.currentTiles[4][4] = new Tile(10, ++k, false);
 	}
 	
 	/**
@@ -95,5 +101,43 @@ public class LabyrinthBoard
 		}
 	}
 	
+	public void displayBoardStatus(){
+		for (int i=0; i < GRID_SIZE; i++)
+			for (int k=0; k < GRID_SIZE; k++)
+				System.out.println(this.currentTiles[i][k].toString());
+	}
+
+	public void displayMoveStatus(){
+		for (int i=0; i < GRID_SIZE; i++)
+			for (int k=0; k < GRID_SIZE; k++)
+				System.out.println(this.currentTiles[i][k].isMoveable());
+	}
 	
+	public void displayWallStatus(){
+		for (int i=0; i < GRID_SIZE; i++)
+			for (int k=0; k < GRID_SIZE; k++)
+				System.out.println(this.currentTiles[i][k].getWall());
+	}
+	
+	public void displaySpawnStatus(){
+		for (int i=0; i < GRID_SIZE; i++)
+			for (int k=0; k < GRID_SIZE; k++)
+				System.out.println(this.currentTiles[i][k].getSpawn());
+	}
+	
+	public void displayTreasureStatus(){
+		for (int i=0; i < GRID_SIZE; i++)
+			for (int k=0; k < GRID_SIZE; k++)
+				if (this.currentTiles[i][k].getTreasure() != 0){
+					System.out.println(this.currentTiles[i][k].getTreasure());
+				}
+				
+	}
+	
+	public void displayRemainingTile()
+	{
+		System.out.println(this.currentSetOfTiles.length());
+		
+		
+	}
 }
