@@ -25,13 +25,14 @@ public class LabyrinthGame
 	 */
 	public LabyrinthGame()
 	{
-		// TODO (done) think about it: why creating new object that are unusable after?
 
 		this.currentBoard = new LabyrinthBoard();
 		this.currentDeck = new LabyrinthDeck();
 
 	}
 	
+	// TODO rewrite main algorithm considering that only 
+	// this method has control on what happens
 	/**
 	 * Until the game is finished{
 	 *   DO
