@@ -14,21 +14,15 @@ public class LabyrinthGame
 	/**
 	 * the game deck of a current game
 	 */
-	private final LabyrinthDeck currentDeck;
-
-
-	
-	
+	private final LabyrinthDeck currentDeck;	
 	
 	/**
 	 * prepare a new labyrinth game, create a new game board and a new shuffled deck of treasure cards
 	 */
 	public LabyrinthGame()
 	{
-
 		this.currentBoard = new LabyrinthBoard();
 		this.currentDeck = new LabyrinthDeck();
-
 	}
 	
 	// TODO rewrite main algorithm considering that only 
@@ -56,7 +50,7 @@ public class LabyrinthGame
 	public void play()
 	{
 		System.out.println("The game just started");
-		this.currentBoard.displayTreasureStatus();
+		System.out.println(this.currentBoard);
 		
 		this.currentBoard.displayRemainingTile();
 		/* Actions realized during the game */

@@ -96,64 +96,71 @@ public class Tile
 		return spawn;
 	}
 
-	public void displayTile()
+	public String toString()
 	{
-		String treasure;
-		String wall = "|     |\n|     |\n|error|\n|     |\n|     |";
-		String status;
-		String spawn;
+		String asciiTile;
+		String asciiTileContent;
+		String asciiTileSpawn;
+		String asciiTileTreasure;
 		
 		if (this.spawn == 0){
-			spawn = "  ";
+			asciiTileSpawn = "  ";
 		}
 		else {
-			spawn = this.spawn;
+			asciiTileSpawn = " " + this.spawn;
 		}
 		
 		if (this.treasure == 0){
-			treasure = "  ";
+			asciiTileTreasure = "  ";
 		}
 		else{
-			treasure = this.treasure
+			if (this.treasure <10){
+				asciiTileTreasure = "0" + this.treasure;
+			}
+			else{
+				asciiTileTreasure = "" + this.treasure;
+			}
 		}
-		
-		
 		
 		if ( this.wall == 0){
-			wall = "|     |\n|     |\n|-----|\n|     |\n|     |";
+			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|-----|\n|     |";
 		}
 		if ( this.wall == 1){
-			wall = "|  |  |\n|  |  |\n|  |  |\n|  |  |\n|  |  |";
+			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  |  |\n|  |  |";
 		}
 		if ( this.wall == 2){
-			wall = "|  |  |\n|  |  |\n|  +--|\n|     |\n|     |";
+			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  +--|\n|     |";
 		}
 		if ( this.wall == 3){
-			wall = "|     |\n|     |\n|  +--|\n|  |  |\n|  |  |";
+			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|  +--|\n|  |  |";
 		}
 		if ( this.wall == 4){
-			wall = "|     |\n|     |\n|--+  |\n|  |  |\n|  |  |";
+			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|--+  |\n|  |  |";
 		}
 		if ( this.wall == 5){
-			wall = "|  |  |\n|  |  |\n|--+  |\n|     |\n|     |";
+			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+  |\n|     |";
 		}
 		if ( this.wall == 6){
-			wall = "|  |  |\n|  |  |\n|  +--|\n|  |  |\n|  |  |";
+			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  +--|\n|  |  |";
 		}
 		if ( this.wall == 7){
-			wall = "|     |\n|     |\n|--+--|\n|  |  |\n|  |  |";
+			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|--+--|\n|  |  |";
 		}
 		if ( this.wall == 8){
-			wall = "|  |  |\n|  |  |\n|--+  |\n|  |  |\n|  |  |";
-		}
-		if ( this.wall == 9){
-			wall = "|  |  |\n|  |  |\n|--+--|\n|     |\n|     |";
-		}
-		if (this.moveable == true){
-			System.out.println("+-----+\n"+wall+"\n+-----+");
+			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+  |\n|  |  |";
 		}
 		else {
-			System.out.println("O-----O\n"+wall+"\nO-----O");
+			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+--|\n|     |";
 		}
+		
+		if (this.moveable == true){
+			asciiTile = "+-----+\n"+asciiTileContent+"\n+-----+";
+		}
+		else {
+			asciiTile = "O-----O\n"+asciiTileContent+"\nO-----O";
+		}
+		
+
+		return asciiTile;
 	}
 }

@@ -108,7 +108,8 @@ public class SetOfTiles
 	 * @throws IndexOutOfBoundsException
 	 */
 	// TODO (done) add javadoc comment
-	public Tile take(int index) throws IndexOutOfBoundsException{
+
+public Tile take(int index) throws IndexOutOfBoundsException{
 		return this.ListOfTiles.remove(index);
 	}
 

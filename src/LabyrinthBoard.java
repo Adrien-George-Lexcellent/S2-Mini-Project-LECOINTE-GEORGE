@@ -101,6 +101,58 @@ public class LabyrinthBoard
 		}
 	}
 	
+	public void insertTile(int x, int y) throws NotABorderTileException, NotAMoveableTileException {
+		int x2;
+		int y2;
+		Tile tempTile;
+		
+		if ((x==0 && x!=6) && (y!=0 && y!=6)){
+			throw new NotABorderTileException();
+		}
+		if (!this.currentTiles[y][x].isMoveable()){
+				throw new NotAMoveableTileException();
+		}
+		
+		if (x==0){
+			x2 = x+(GRID_SIZE-1);
+		}
+		else{
+			if (x==6){
+				x2 = x-(GRID_SIZE-1);
+			}
+			else{
+				x2 = x;
+			}
+		}
+		
+		if (y==0){
+			y2 = y+(GRID_SIZE-1);
+		}
+		else{
+			if (y==6){
+				y2 = y-(GRID_SIZE-1);
+			}
+			else{
+				y2 = y;
+			}
+		}
+		
+		tempTile = this.currentTiles[x2][y2];
+		
+		if (x%2==0){
+			for (int k=0; k<GRID_SIZE-1; k++){
+				currentTiles[y][k+1] = currentTiles[y][k];
+			}
+		}
+		else{
+			for (int i=0; i<GRID_SIZE-1; i++){
+				currentTiles[i+1][x] = currentTiles[i][x];
+			}
+		}
+		
+		currentTiles[y][x] = this.currentSetOfTiles.take(0);
+	}
+	
 	public void displayBoardStatus(){
 		for (int i=0; i < GRID_SIZE; i++)
 			for (int k=0; k < GRID_SIZE; k++)
@@ -136,8 +188,22 @@ public class LabyrinthBoard
 	
 	public void displayRemainingTile()
 	{
-		System.out.println(this.currentSetOfTiles.length());
+		System.out.println(this.currentSetOfTiles);
+	}
+	
+	public String toString()
+	{
+		String asciiBoard = "";
 		
-		
+		for (int i=0; i<GRID_SIZE; i++){
+			for (int line=0; line<5; line++){
+				for (int k=0; k<GRID_SIZE; k++){
+					asciiBoard += this.currentTiles[i][k].toString().split("\n")[line];
+				}
+				asciiBoard += "\n";
+			}
+			//asciiBoard += "\n";
+		}
+		return asciiBoard;
 	}
 }

@@ -13,8 +13,8 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		//new LabyrinthGame().play();
-		new Tile(7,2).displayTile();
+		new LabyrinthGame().play();
+		//new Tile(7,2).displayTile();
 	}
 
 }
