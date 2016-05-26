@@ -65,31 +65,11 @@ public class SetOfTiles
 					}
 				}
 				else {
-					this.ListOfTiles.add(i, new Tile(random.nextInt(4)+6, 0)); 
+					this.ListOfTiles.add(i, new Tile(random.nextInt(4)+6, k));
+					k++;
 				}
 			}
 		}
-		
-		
-		
-		/*for (int i=0; i<34; i++){
-			if (i < 12){
-				this.ListOfTiles.add(i, new Tile(random.nextInt(1)+1, 0));
-			}
-			else if (i >= 28){
-				this.ListOfTiles.add(i, new Tile(random.nextInt(3)+7, k));
-				k++;
-			}
-			else{
-				if (k<8) {
-					this.ListOfTiles.add(i, new Tile(random.nextInt(3)+3, k));
-					k++;
-				}
-				else {
-					this.ListOfTiles.add(i, new Tile(random.nextInt(3)+3, 0));
-				}
-			}
-		}*/
 	}
 	
 	/**
@@ -109,9 +89,15 @@ public class SetOfTiles
 	 */
 	// TODO (done) add javadoc comment
 
-public Tile take(int index) throws IndexOutOfBoundsException{
+	public Tile take(int index) throws IndexOutOfBoundsException{
 		return this.ListOfTiles.remove(index);
 	}
 
-
+	public Tile consult(int index){
+		return this.ListOfTiles.get(index);
+	}
+	
+	public void store(Tile tempTile){
+		this.ListOfTiles.add(tempTile);
+	}
 }

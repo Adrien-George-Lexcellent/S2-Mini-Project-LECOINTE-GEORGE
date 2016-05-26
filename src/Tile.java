@@ -4,6 +4,7 @@
  */
 public class Tile
 {
+	
 	/**
 	 * The moveable attribute of a moveable tile (always moveable)
 	 */
@@ -98,8 +99,8 @@ public class Tile
 
 	public String toString()
 	{
-		String asciiTile;
-		String asciiTileContent;
+		String asciiTile="";
+		String asciiTileContent="";
 		String asciiTileSpawn;
 		String asciiTileTreasure;
 		
@@ -122,38 +123,31 @@ public class Tile
 			}
 		}
 		
-		if ( this.wall == 0){
-			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|-----|\n|     |";
-		}
-		if ( this.wall == 1){
-			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  |  |\n|  |  |";
-		}
-		if ( this.wall == 2){
-			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  +--|\n|     |";
-		}
-		if ( this.wall == 3){
-			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|  +--|\n|  |  |";
-		}
-		if ( this.wall == 4){
-			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|--+  |\n|  |  |";
-		}
-		if ( this.wall == 5){
-			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+  |\n|     |";
-		}
-		if ( this.wall == 6){
-			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  +--|\n|  |  |";
-		}
-		if ( this.wall == 7){
-			asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|--+--|\n|  |  |";
-		}
-		if ( this.wall == 8){
-			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+  |\n|  |  |";
-		}
-		else {
-			asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+--|\n|     |";
+		switch (this.wall) {
+			case 0:  asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|-----|\n|     |";
+			 		 break;
+			case 1:  asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  |  |\n|  |  |";
+			 		 break;
+			case 2:  asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  +--|\n|     |";
+			 		 break;
+			case 3:  asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|  +--|\n|  |  |";
+					 break;
+			case 4:  asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|--+  |\n|  |  |";
+					 break;
+			case 5:  asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+  |\n|     |";
+					 break;
+			case 6:  asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|  +--|\n|  |  |";
+					 break;
+			case 7:  asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|--+--|\n|  |  |";
+			 		 break;
+			case 8:  asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+  |\n|  |  |";
+					 break;
+			case 9:  asciiTileContent = "|" + asciiTileTreasure + "|" + asciiTileSpawn + "|\n|--+--|\n|     |";
+					 break;
+			default: asciiTileContent = "|" + asciiTileTreasure + " " + asciiTileSpawn + "|\n|     |\n|     |";
 		}
 		
-		if (this.moveable == true){
+		if (this.moveable){
 			asciiTile = "+-----+\n"+asciiTileContent+"\n+-----+";
 		}
 		else {

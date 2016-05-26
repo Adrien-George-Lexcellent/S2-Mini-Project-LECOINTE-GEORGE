@@ -1,5 +1,4 @@
 import java.util.Random;
-
 /**
  * The board on which the labyrinth game is played
  * 
@@ -8,6 +7,19 @@ import java.util.Random;
 public class LabyrinthBoard
 {
 
+	public static final int HORIZONTAL = 0;
+	public static final int VERTICAL = 1;
+	public static final int RIGHT_UP = 2;
+	public static final int RIGHT_DOWN = 3;
+	public static final int LEFT_DOWN = 4;
+	public static final int LEFT_UP = 5;
+	public static final int VERTICAL_RIGHT = 6;
+	public static final int HORIZONTAL_DOWN = 7;
+	public static final int VERTICAL_LEFT = 8;
+	public static final int HORIZONTAL_UP = 9;
+
+	
+	
 	// TODO (done) add javadoc comment
 	/**
 	 * The standard size of a Labyrinth board, in rows and columns
@@ -49,23 +61,23 @@ public class LabyrinthBoard
 	{
 		int k=12;
 		
-		this.currentTiles[0][0] = new Tile(4, 0, false, 1);
-		this.currentTiles[0][6] = new Tile(5, 0, false, 2);
-		this.currentTiles[6][0] = new Tile(3, 0, false, 3);
-		this.currentTiles[6][6] = new Tile(6, 0, false, 4);
+		this.currentTiles[0][0] = new Tile(RIGHT_DOWN, 0, false, 1);
+		this.currentTiles[0][6] = new Tile(LEFT_DOWN, 0, false, 2);
+		this.currentTiles[6][0] = new Tile(RIGHT_UP, 0, false, 3);
+		this.currentTiles[6][6] = new Tile(LEFT_UP, 0, false, 4);
 		
-		this.currentTiles[0][2] = new Tile(8, ++k, false);
-		this.currentTiles[0][4] = new Tile(8, ++k, false);
-		this.currentTiles[6][2] = new Tile(10, ++k, false);
-		this.currentTiles[6][4] = new Tile(10, ++k, false);
-		this.currentTiles[2][0] = new Tile(7, ++k, false);
-		this.currentTiles[4][0] = new Tile(7, ++k, false);
-		this.currentTiles[2][6] = new Tile(9, ++k, false);
-		this.currentTiles[4][6] = new Tile(9, ++k, false);
-		this.currentTiles[2][2] = new Tile(8, ++k, false);
-		this.currentTiles[2][4] = new Tile(9, ++k, false);
-		this.currentTiles[4][2] = new Tile(7, ++k, false);
-		this.currentTiles[4][4] = new Tile(10, ++k, false);
+		this.currentTiles[0][2] = new Tile(HORIZONTAL_DOWN, ++k, false);
+		this.currentTiles[0][4] = new Tile(HORIZONTAL_DOWN, ++k, false);
+		this.currentTiles[6][2] = new Tile(HORIZONTAL_UP, ++k, false);
+		this.currentTiles[6][4] = new Tile(HORIZONTAL_UP, ++k, false);
+		this.currentTiles[2][0] = new Tile(VERTICAL_RIGHT, ++k, false);
+		this.currentTiles[4][0] = new Tile(VERTICAL_RIGHT, ++k, false);
+		this.currentTiles[2][6] = new Tile(VERTICAL_LEFT, ++k, false);
+		this.currentTiles[4][6] = new Tile(VERTICAL_LEFT, ++k, false);
+		this.currentTiles[2][2] = new Tile(HORIZONTAL_DOWN, ++k, false);
+		this.currentTiles[2][4] = new Tile(VERTICAL_LEFT, ++k, false);
+		this.currentTiles[4][2] = new Tile(VERTICAL_RIGHT, ++k, false);
+		this.currentTiles[4][4] = new Tile(HORIZONTAL_UP, ++k, false);
 	}
 	
 	/**
@@ -101,56 +113,73 @@ public class LabyrinthBoard
 		}
 	}
 	
-	public void insertTile(int x, int y) throws NotABorderTileException, NotAMoveableTileException {
-		int x2;
-		int y2;
+	public void insertTile(int line, int column) throws NotABorderTileException, NotAMoveableTileException {
+		int lineTempTile;
+		int columnTempTile;
 		Tile tempTile;
 		
-		if ((x==0 && x!=6) && (y!=0 && y!=6)){
+		if ((line!=0 && line!=6) && (column!=0 && column!=6)){
 			throw new NotABorderTileException();
 		}
-		if (!this.currentTiles[y][x].isMoveable()){
-				throw new NotAMoveableTileException();
+		if (!this.currentTiles[column][line].isMoveable()){
+			throw new NotAMoveableTileException();
 		}
 		
-		if (x==0){
-			x2 = x+(GRID_SIZE-1);
+		if (line==0){
+			lineTempTile = GRID_SIZE-1;
 		}
 		else{
-			if (x==6){
-				x2 = x-(GRID_SIZE-1);
+			if (line==6){
+				lineTempTile = 0;
 			}
 			else{
-				x2 = x;
+				lineTempTile = line;
 			}
 		}
 		
-		if (y==0){
-			y2 = y+(GRID_SIZE-1);
+		if (column==0){
+			columnTempTile = column+(GRID_SIZE-1);
 		}
 		else{
-			if (y==6){
-				y2 = y-(GRID_SIZE-1);
+			if (column==6){
+				columnTempTile = column-(GRID_SIZE-1);
 			}
 			else{
-				y2 = y;
+				columnTempTile = column;
 			}
 		}
+		System.out.println(this.currentTiles[lineTempTile][columnTempTile].toString());
+		tempTile = this.currentTiles[lineTempTile][columnTempTile];
 		
-		tempTile = this.currentTiles[x2][y2];
 		
-		if (x%2==0){
-			for (int k=0; k<GRID_SIZE-1; k++){
-				currentTiles[y][k+1] = currentTiles[y][k];
+		if (line%2==0){
+			if (line==0){
+				for (int i=GRID_SIZE-1; i>0; i--){
+					currentTiles[i][column] = currentTiles[i-1][column];
+				}
+			}
+			else{
+				for (int i=0; i<GRID_SIZE-1; i++){
+					currentTiles[i][line] = currentTiles[i+1][line];
+				}
 			}
 		}
 		else{
-			for (int i=0; i<GRID_SIZE-1; i++){
-				currentTiles[i+1][x] = currentTiles[i][x];
+			if (column==0){
+				for (int i=GRID_SIZE-1; i>0; i--){
+					currentTiles[line][i] = currentTiles[line][i-1];
+				}
+			}
+			else{
+				for (int i=0; i<GRID_SIZE-1; i++){
+					currentTiles[line][i] = currentTiles[line][i+1];
+				}
 			}
 		}
 		
-		currentTiles[y][x] = this.currentSetOfTiles.take(0);
+		currentTiles[line][column] = this.currentSetOfTiles.take(0);
+		
+		this.currentSetOfTiles.store(tempTile);
 	}
 	
 	public void displayBoardStatus(){
@@ -188,7 +217,8 @@ public class LabyrinthBoard
 	
 	public void displayRemainingTile()
 	{
-		System.out.println(this.currentSetOfTiles);
+		System.out.println(this.currentSetOfTiles.length());
+		System.out.println(this.currentSetOfTiles.consult(0).toString());
 	}
 	
 	public String toString()

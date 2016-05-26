@@ -51,10 +51,9 @@ public class LabyrinthGame
 	{
 		System.out.println("The game just started");
 		System.out.println(this.currentBoard);
-		
-		this.currentBoard.displayRemainingTile();
 		/* Actions realized during the game */
 		System.out.println("The game just ended");
+
 	}
 	
 }
